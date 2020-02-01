@@ -1,0 +1,7 @@
+# API information #
+###################
+authDetails.py
+
+#Other tidbits#
+.idea/
+__pycache__/
