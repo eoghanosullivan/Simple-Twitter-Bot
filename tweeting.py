@@ -1,5 +1,6 @@
 import tweepy
 import time
+import csv
 from authDetails import *
 
 
@@ -38,3 +39,20 @@ def multi_tweets():
         except StopIteration:
             break
         time.sleep(min * seconds)
+
+def tweet_csv():
+    tweets=[]
+    with open('tweet_list_test.csv', mode='r') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for new_tweet in csv_reader:
+            tweets.append(new_tweet)
+            print(*new_tweet)
+        for tweet in tweets:
+            try:
+                api.update_status(*tweet)
+                print('successfully tweeted: ', *tweet)
+                time.sleep(10000)
+            except tweepy.TweepError as e:
+                print(e.reason)
+            except StopIteration:
+                break

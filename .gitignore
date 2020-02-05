@@ -1,7 +1,8 @@
 # API information #
 ###################
 authDetails.py
+*.csv
 
-#Other tidbits#
+#Other#
 .idea/
 __pycache__/
