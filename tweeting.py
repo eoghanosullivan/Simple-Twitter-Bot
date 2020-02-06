@@ -51,7 +51,7 @@ def tweet_csv():
             try:
                 api.update_status(*tweet)
                 print('successfully tweeted: ', *tweet)
-                time.sleep(10000)
+                time.sleep(10)
             except tweepy.TweepError as e:
                 print(e.reason)
             except StopIteration:

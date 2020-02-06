@@ -18,6 +18,6 @@ def return_tweets():
 def follower_count():
     follower_list = []
 
-    for follower in tweepy.Cursor(api.followers).items(2):
+    for follower in tweepy.Cursor(api.followers).items():
         follower_list.append(follower)
     print('You have a total of ', len(follower_list), 'followers')

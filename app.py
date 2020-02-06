@@ -4,9 +4,8 @@ from tweeting import *
 from interactions import *
 from reporting import *
 
-keep_alive = True
-
 def app():
+
     print('Thank you for using the Simple Twit Bot')
     print('Would you like to \n 1. Create tweet(s) \n 2. Search and Interactions \n 3. Reporting')
     choice = int(input('Numerical value beside option '))
@@ -19,7 +18,6 @@ def app():
     else:
         print('Invalid choice, please choose one of the options below')
         app()
-
 
 
 def tweet():
@@ -37,13 +35,16 @@ def tweet():
 
 
 def search_interactions():
-    print('Would you like to \n 1. Search key word and like posts')
+    print('Would you like to \n 1. Search key word and like posts \n 2. Search for user')
     choice = int(input('Numerical value beside option '))
     if choice == 1:
         search_like()
+    elif choice ==2:
+        search_user()
     else:
         print('Invalid choice, please choose one of the options below')
         app()
+
 
 def reports():
     print('Would you like to \n 1. Search tweets \n 2. List followers')
@@ -56,10 +57,5 @@ def reports():
         print('Invalid choice, please choose one of the options below')
         app()
 
-
-app()
-
-# root = Tk()
-# theLabel = Label(root, text="Test")
-# theLabel.pack()
-# root.mainloop()
+while True:
+    app()
