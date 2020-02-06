@@ -39,20 +39,24 @@ def search_interactions():
     choice = int(input('Numerical value beside option '))
     if choice == 1:
         search_like()
-    elif choice ==2:
+    elif choice == 2:
         search_user()
+    elif choice == 3:
+        follow_back()
     else:
         print('Invalid choice, please choose one of the options below')
         app()
 
 
 def reports():
-    print('Would you like to \n 1. Search tweets \n 2. List followers')
+    print('Would you like to \n 1. Search tweets \n 2. List followers \n 3. Most recent tweets retweeted')
     choice = int(input('Numerical value beside option '))
     if choice == 1:
         return_tweets()
     elif choice == 2:
         follower_count()
+    elif choice == 3:
+        recent_retweets()
     else:
         print('Invalid choice, please choose one of the options below')
         app()

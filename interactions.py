@@ -47,3 +47,13 @@ def search_tweet(search):
             print(e.reason)
         except StopIteration:
             break
+
+def follow_back():
+    for follower in tweepy.Cursor(api.followers).items(1):
+        try:
+            follower.follow()
+            print('Followed ', follower.screen_name)
+        except tweepy.TweepError as e:
+            print(e.reason)
+        except StopIteration:
+            break
